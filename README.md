@@ -46,3 +46,7 @@ Blup
 
 > Brasil!
 ~ Iroh
+
+> Kk tilapia doidao namora lianha
+~ Chinês
+
