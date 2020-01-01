@@ -1,0 +1,14 @@
+{
+  "ADMINISTRATOR": "Administrator",
+  "KICK_MEMBERS": "Kick members",
+  "BAN_MEMBERS": "Ban members",
+  "MANAGE_CHANNELS": "Manage channels",
+  "MANAGE_GUILD": "Manage guild",
+  "MANAGE_ROLES": "Manage roles",
+  "MANAGE_WEBHOOKS": "Manage webhooks",
+  "MANAGE_EMOJIS": "Manage emojis",
+  "MANAGE_MESSAGES": "Manage messages",
+  "VIEW_AUDIT_LOG": "View audit log",
+  "EMBED_LINKS": "Embed links",
+  "ATTACH_FILES": "Attach files"
+}

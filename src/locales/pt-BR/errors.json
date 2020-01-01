@@ -1,0 +1,10 @@
+{
+  "dev_only": "$t(constants:errorPrefix) {{- user}}, O comando `{{- name}}` só pode ser usado pelos desenvolvedores.",
+  "owner_only": "$t(constants:errorPrefix) {{- user}}, O comando `{{- name}}` só pode ser usado pelo dono do servidor.",
+  "user_missing_perms": "$t(constants:errorPrefix) {{- user}}, você não possui a permissão {{perms}} para executar o comando **{{command}}**.",
+  "user_missing_perms_plural": "$t(constants:errorPrefix) {{- user}}, você não possui as permissões {{perms}} para executar o comando **{{command}}**.",
+  "bot_missing_perms": "$t(constants:errorPrefix) {{- user}}, Eu não possuo a permissão {{perms}} para executar o comando **{{command}}**.",
+  "bot_missing_perms_plural": "$t(constants:errorPrefix) {{- user}}, Eu não possuo as permissões {{perms}} para executar o comando **{{command}}**.",
+  "no_db_connection": "$t(constants:errorPrefix) {{- user}}, Não posso executar o comando {{- name}} pois não estou conectado ao banco de dados.",
+  "cooldown": "$t(constants:errorPrefix) {{- user}}, Aguarde alguns segundos para executar o comando novamente!"
+}

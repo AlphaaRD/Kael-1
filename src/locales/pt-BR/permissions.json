@@ -1,0 +1,14 @@
+{
+  "ADMINISTRATOR": "Administrador",
+  "KICK_MEMBERS": "Expulsar membros",
+  "BAN_MEMBERS": "Banir membros",
+  "MANAGE_CHANNELS": "Gerenciar canais",
+  "MANAGE_GUILD": "Gerenciar servidor",
+  "MANAGE_ROLES": "Gerenciar cargos",
+  "MANAGE_WEBHOOKS": "Gerenciar webhooks",
+  "MANAGE_EMOJIS": "Gerenciar emojis",
+  "MANAGE_MESSAGES": "Gerenciar mensagens",
+  "VIEW_AUDIT_LOG": "Ver o registro de auditoria",
+  "EMBED_LINKS": "Inserir links",
+  "ATTACH_FILES": "Anexar arquivos"
+}

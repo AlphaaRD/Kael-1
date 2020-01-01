@@ -1,0 +1,10 @@
+{
+  "dev_only": "$t(constants:errorPrefix) {{- user}}, The `{{- name}}` command is restricted to developers only.",
+  "owner_only": "$t(constants:errorPrefix) {{- user}}, The `{{- name}}` command is restricted to the server owner.",
+  "user_missing_perms": "$t(constants:errorPrefix) {{- user}}, You lack the permission to execute **{{command}}**. Required perm: {{perms}}",
+  "user_missing_perms_plural": "$t(constants:errorPrefix) {{- user}}, You lack the permission to execute **{{command}}**. Required perms: {{perms}}",
+  "bot_missing_perms": "$t(constants:errorPrefix) {{- user}}, I lack the permission to execute **{{command}}**. Required perm: {{perms}}",
+  "bot_missing_perms_plural": "$t(constants:errorPrefix) {{- user}}, I lack the permissions to execute **{{command}}**. Required perms: {{perms}}",
+  "no_db_connection": "$t(constants:errorPrefix) {{- user}}, I can't execute the {{- name}} command. No database connection.",
+  "cooldown": "$t(constants:errorPrefix) {{- user}}, Wait a few seconds before running a command!"
+}

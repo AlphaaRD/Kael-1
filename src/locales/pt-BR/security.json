@@ -1,0 +1,19 @@
+{
+  "invite": {
+    "banReason": "Banido por {{- bot}} -> Divulgando convites de servidor no canal {{- channelName}}. Strike 3/3",
+    "memberBanned": "{{- tag}} foi banido do servidor por divulgação de servidores! Strike 3/3",
+    "infraction": "$t(constants:errorPrefix) {{- user}}, você não pode compartilhar links de outros servidores aqui, bobinho(a)! {{count}}/3"
+  },
+  "capslock": {
+    "kickReason": "Expulso por {{- bot}} -> Capslock em massa no canal {{- channelName}}. Strike 10/10",
+    "memberKicked": "{{- tag}} foi expulso do servidor por capslock em massa! Strike 10/10",
+    "infraction": "$t(constants:errorPrefix) {{- user}}, Capslock ativo bobinho(a)! {{count}}/10"
+  },
+  "spam": {
+    "kickReason": "Expulso por {{- bot}} -> Spam em massa no canal {{- channelName}}. Strike 5/5",
+    "memberKicked": "{{- tag}} foi expulso do servidor por spam em massa! Strike 5/5",
+    "infraction": "$t(constants:errorPrefix) {{- user}}, não é permitido spam aqui bobinho(a)! {{count}}/5"
+  },
+  "bot": "Bloqueador de bots ativo!",
+  "apng": "Defesa APNG ativa!"
+}

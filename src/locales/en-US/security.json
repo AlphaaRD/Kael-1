@@ -1,0 +1,19 @@
+{
+  "invite": {
+    "banReason": "Banned by {{- bot}} -> Server invites sent on channel {{- channelName}}. Strike 3/3",
+    "memberBanned": "{{- tag}} banned! Server invites. Strike 3/3",
+    "infraction": "$t(constants:errorPrefix) {{- user}}, You can't post invite links here! {{count}}/3"
+  },
+  "capslock": {
+    "kickReason": "Kicked by {{- bot}} -> Capslock excess on channel {{- channelName}}. Strike 10/10",
+    "memberkicked": "{{- tag}} kicked! Capslock excess. Strike 10/10",
+    "infraction": "$t(constants:errorPrefix) {{- user}}, Avoid excess capslock! {{count}}/10"
+  },
+  "spam": {
+    "kickReason": "Kicked by {{- bot}} -> SPAM on channel {{- channelName}}. Strike 5/5",
+    "memberKicked": "{{- tag}} kicked! SPAM. Strike 5/5",
+    "infraction": "$t(constants:errorPrefix) {{- user}}, SPAM isn't allowed. {{count}}/5"
+  },
+  "bot": "Bot defense active!",
+  "apng": "APNG defense active!"
+}

@@ -1,0 +1,339 @@
+{
+  "help": {
+    "name": "ajuda",
+    "embed": {
+      "title": "Ajuda | Kael",
+      "admin": ["{{- prefix}}ajuda admin", "Para receber meus comandos administrativos."],
+      "staff": ["{{- prefix}}ajuda staff", "Para receber meus comandos de equipe."],
+      "util": ["{{- prefix}}ajuda util", "Para receber meus comandos de utilidade."]
+    },
+    "subCommands": {
+      "admin": {
+        "embed": {
+          "title": "Ajuda | Administração"
+        },
+        "sent": "$t(emojis:Admin) | Meus comandos de administração foram enviados para o seu privado!"
+      },
+      "staff": {
+        "embed": {
+          "title": "Ajuda | Staff"
+        },
+        "sent": "$t(emojis:Mod) | Meus comandos de equipe foram enviados para o seu privado!"
+      },
+      "util": {
+        "embed": {
+          "title": "Ajuda | Utilidade"
+        },
+        "sent": "$t(emojis:util) | Meus comandos de utilidade foram enviados para o seu privado!"
+      }
+    },
+    "errors": {
+      "dmBlocked": "$t(constants:errorPrefix) {{- user}}, Não consigo lhe enviar meus comandos de ajuda pois suas mensagens diretas estão desabilitadas."
+    }
+  },
+  "avatar": {
+    "name": "avatar",
+    "description": "Veja o seu avatar ou de algum outro amiguinho(a).",
+    "embed": {
+      "description": "$t(emojis:Avatar) **|** Avatar de {{- user}}"
+    }
+  },
+  "ping": {
+    "name": "ping",
+    "description": "Receba o ping do bot em seu servidor."
+  },
+  "autorole": {
+    "name": "autocargo",
+    "arguments": "<@cargo>",
+    "description": "Determine cargos que serão dados automaticamente para novos membros.",
+    "embed": {
+      "title": "Ajuda | Autocargo",
+      "description": ["{{- prefix}}autocargo", "Defina os cargos que serão dados automaticamente para os novatos. Limite máximo de cargos a serem atribuídos: **5**"],
+      "remove": ["{{- prefix}}autocargo remove", "Remova do banco de dados os cargos que serão dados automaticamente."]
+    },
+    "errors": {
+      "invalidRoles": "$t(constants:errorPrefix) {{- user}}, Os cargos definidos são inválidos, bobinho(a)!",
+      "rolesAlreadyAdded": "$t(constants:errorPrefix) {{- user}}, Todos os cargos já foram adicionados!!",
+      "reachedLimit": "$t(constants:errorPrefix) {{- user}}, Todos os **5** cargos já foram adicionados!!",
+      "setLimit": "$t(constants:errorPrefix) {{- user}}, Você só pode definir até 5 cargos no autocargo, bobinho(a)!",
+      "removeLimit": "$t(constants:errorPrefix) {{- user}}, Você só pode remover até 5 cargos no autocargo, bobinho(a)!"
+    },
+    "add": "$t(emojis:autorole) **|** Adicionando o cargo {{- roles}} como autocargo.",
+    "add_plural": "$t(emojis:autorole) **|** Adicionando os cargos {{- roles}} como autocargo.",
+    "remove": "$t(emojis:autorole) **|** Removendo o cargo {{- roles}} como autocargo.",
+    "remove_plural": "$t(emojis:autorole) **|** Removendo os cargos {{- roles}} como autocargo."
+  },
+  "message": {
+    "name": "mensagem",
+    "description": "Para mais informações das minhas mensagens de boas-vindas.",
+    "embed": {
+      "title": "Ajuda | Mensagem",
+      "description": "Utilize os comandos a baixo para estabelecer suas mensagens!",
+      "join": [
+        "{{- prefix}}mensagem entrada",
+        "Defina uma mensagem de boas-vindas em seu servidor."
+      ],
+      "dm": [
+        "{{- prefix}}mensagem privado",
+        "Defina uma mensagem privada de boas-vindas em seu servidor."
+      ],
+      "leave": [
+        "{{- prefix}}mensagem saída",
+        "Defina uma mensagem de saída em seu servidor.\n\n**Parâmetros:**"
+      ],
+      "userCreatedAt": [
+        "[user.created]",
+        "Para dar a data em que o usuário criou a conta."
+      ],
+      "member": [
+        "[member]",
+        "Para mencionar o usuário."
+      ],
+      "guildName": [
+        "[guild.name]",
+        "Para dizer o nome do server."
+      ],
+      "guildId": [
+        "[guild.id]",
+        "Para dizer o nome do server."
+      ],
+      "memberUsername": [
+        "[member.username]",
+        "Dizer o nome do usuário."
+      ],
+      "memberAvatar": [
+        "[member.avatar]",
+        "Dá o url da imagem de perfil do usuário que entrou."
+      ],
+      "memberId": [
+        "[member.id]",
+        "Dá o ID o usuário que entrou."
+      ],
+      "deactivatedModule": [
+        "{{- prefix}}mensagem desativar entrada/privado/saída",
+        "Para desativar algum parâmetro de mensagem."
+      ],
+      "testModule": [
+        "{{- prefix}}mensagem test entrada/privado/saída",
+        "Para testar sua mensagem com o parâmetro definido."
+      ]
+    },
+    "subCommands": {
+      "dm": {
+        "errors": {
+          "noArgs": "$t(constants:errorPrefix) {{- user}}, Substitua `<mensagem>` pela sua mensagem desejada: `{{- prefix}}mensagem privado <mensagem>`.",
+          "lengthLimit": "$t(constants:errorPrefix) {{- user}}, A saudação nas mensagens diretas só pode ter {{max}} caracteres!!"
+        },
+        "setMessage": "$t(emojis:MensagemK) **|** {{- user}}, Saudação nas mensagens diretas atualizada para `{{- message}}`"
+      },
+      "welcome": {
+        "errors": {
+          "lengthLimit": "$t(constants:errorPrefix) {{- user}}, A mensagem de entrada só pode ter {{max}} caracteres!!"
+        },
+        "setChannel": "$t(emojis:MensagemK) **|** {{- user}}, As mensagens de entrada serão enviadas para {{- channel}}. Por favor envie a seguir a mensagem desejada.",
+        "setMessage": "$t(emojis:MensagemK) **|** {{- user}}, Mensagem de entrada atualizada para `{{- message}}`"
+      },
+      "goodbye": {
+        "errors": {
+          "lengthLimit": "$t(constants:errorPrefix) {{- user}}, A mensagem de saída só pode ter {{max}} caracteres!!"
+        },
+        "setChannel": "$t(emojis:MensagemK) **|** {{- user}}, As mensagens de saída serão enviadas para {{- channel}}. Por favor envie a seguir a mensagem desejada.",
+        "setMessage": "$t(emojis:MensagemK) **|** {{- user}}, Mensagem de saída atualizada para `{{- message}}`"
+      },
+      "test": {
+        "errors": {
+          "dmNotActive": "$t(constants:errorPrefix) {{- user}}, A saudação nas mensagens diretas não está ativada!",
+          "welcomeNotActive": "$t(constants:errorPrefix) {{- user}}, A mensagem de entrada não está ativada!",
+          "goodbyeNotActive": "$t(constants:errorPrefix) {{- user}}, A mensagem de saída não está ativada!"
+        }
+      },
+      "deactivate": {
+        "errors": {
+          "dmAlreadyDeactivated": "$t(constants:errorPrefix) {{- user}}, A saudação nas mensagens diretas já está desativada!",
+          "welcomeAlreadyDeactivated": "$t(constants:errorPrefix) {{- user}}, A mensagem de entrada já está desativada!",
+          "goodbyeAlreadyDeactivated": "$t(constants:errorPrefix) {{- user}}, A mensagem de saída já está desativada!"
+        },
+        "welcome": "$t(emojis:MensagemK) **|** {{- user}}, Mensagens de entrada desativadas.",
+        "goodbye": "$t(emojis:MensagemK) **|** {{- user}}, Mensagens de saída desativadas.",
+        "dm": "$t(emojis:MensagemK)**|** {{- user}}, Saudação nas mensagens diretas desativada."
+      }
+    }
+  },
+  "prefix": {
+    "name": "prefixo",
+    "description": "Mude o prefixo do bot a escolha no seu servidor.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) Defina um novo prefixo! **{{- prefix}}prefixo <novo prefixo>**",
+      "lengthLimit": "$t(constants:errorPrefix) {{- user}}, Eu possuo um limite máximo de {{MAX}} caracteres em meu prefixo, tente novamente amiguinho(a)."
+    },
+    "changed": "$t(emojis:KaelMutado) **|** {{- user}}, Meu prefixo foi alterado para **{{- prefix}}**"
+  },
+  "icon": {
+    "name": "ícone",
+    "description": "Mostra o ícone do servidor.",
+    "embed": {
+      "title": "$t(emojis:Avatar) **|** Ícone do servidor",
+      "errorTitle": "$t(emojis:Avatar) **|** Servidor sem ícone"
+    }
+  },
+  "recruiter": {
+    "name": "recrutador",
+    "description": "Veja quantos membros você ou outro indíviduo recrutaram para o servidor.",
+    "embed": {
+      "title": "Kael | Recrutador",
+      "recruiterInfo": ["Recrutador {{- tag}}", "Convidou um total de **{{count}}** novato(s)."],
+      "invites": "Convites:"
+    },
+    "errors": {
+      "noInvites": "**{{- tag}}** não possui convites no servidor."
+    },
+    "inviteInfo": "{{- count}} novato(s)"
+  },
+  "recruiters": {
+    "name": "recrutadores",
+    "description": "Tenha acesso a lista de melhores recrutadores do servidor.",
+    "embed": {
+      "title": "Recrutadores | {{- guildName}}",
+      "description": "Esse é meu \"ranking\" e apenas os melhores no recrutamento se encontram nele!",
+      "position_1": "$t(emojis:lugar1) **1º**",
+      "position_2": "$t(emojis:lugar2) **2º**",
+      "position_3": "$t(emojis:lugar3) **3º**",
+      "position_4": "$t(emojis:lugar4) **4º**",
+      "position_5": "$t(emojis:lugar5) **5º**",
+      "inviter": "{{- position}} {{- username}}\n```\nConvidados: {{uses}}\n```",
+      "totalRecruited": ["Total/Recrutados", "$t(emojis:Servidor) ~ {{totalRecruited}}"],
+      "totalInvites": ["Total/Convites", "$t(emojis:Convite) ~ {{totalInvites}}"]
+    }
+  },
+  "roleall": {
+    "name": "cargotodos",
+    "description": "Adicione até 5 cargos em cada membro do servidor.",
+    "errors": {
+      "noRoles": "$t(constants:errorPrefix) {{- user}}, O argumento `<@roleId>` se encontra inválido.",
+      "rolesLimit": "$t(constants:errorPrefix) {{- user}}, Você só pode pode adicionar até 5 roles a cada comando."
+    },
+    "embed": {
+      "title": "Deseja adicionar {{roles}} cargo para {{members}} membros?",
+      "roles": ["$t(emojis:KaelVerificacaoAnimado)Cargo(s)", "{{- roles}}"],
+      "estimatedTime": "Tempo estimado: {{count}} segundo(s)"
+    },
+    "cancelled": "$t(emojis:Kaeltec) **|** {{- user}}, Cargotodos foi cancelado.",
+    "addingRoles": "$t(emojis:Kaeltec) **|** {{- user}}, Estou adicionando os cargos... Aguarde!",
+    "done": "$t(emojis:Kaeltec) **|** {{- user}}, Os cargos definidos foram adicionado para todos os membros."
+  },
+  "lang": {
+    "name": "linguagem",
+    "description": "Mude o idioma do bot de acordo com seu servidor.",
+    "embed": {
+      "title": "Selecione um idioma!",
+      "available": "Idiomas disponíveis:"
+    },
+    "languageChanged": "$t(emojis:ConfirmarK) {{- user}}, Linguagem trocada para **Português do Brasil** 🇧🇷"
+  },
+  "say": {
+    "name": "falar",
+    "description": "Diga algo e eu repetirei para você.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, Especifique o que você quer que eu fale!"
+    }
+  },
+  "ban": {
+    "name": "ban",
+    "description": "Aplique banimento em um determinado usuário.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, **| Argumento obrigatório `<@mention/id>`.**",
+      "userNotFound": "$t(constants:errorPrefix) {{- user}}, **| Usuário especificado não encontrado.**",
+      "userMissingPerm": "$t(constants:errorPrefix) {{- user}}, Você não pode banir este usuário porque o cargo dele é maior que o seu.",
+      "botMissingPerm": "$t(constants:errorPrefix) {{- user}}, Eu não posso banir este usuário porque o cargo dele é maior que o meu."
+    },
+    "embed": {
+      "title": "Kael | Banimento",
+      "description": "{{- executor}} baniu {{- banned}}!",
+      "user": ["Usuário", "{{- tag}}"],
+      "id": ["ID", "{{id}}"],
+      "reason": ["Motivo", "{{- reason}}"],
+      "footer": "Você precisa ir ao meu servidor para aprender boas maneiras 🏫"
+    }
+  },
+  "kick": {
+    "name": "kick",
+    "description": "Aplique expulsão em um determinado usuário.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, Defina o usuário a ser expulso.",
+      "userMissingPerm": "$t(constants:errorPrefix) {{- user}}, Você não pode expulsar este usuário porque o cargo dele é maior que o seu.",
+      "botMissingPerm": "$t(constants:errorPrefix) {{- user}}, Eu não posso expulsar este usuário porque o cargo dele é maior que o meu."
+    },
+    "embed": {
+      "title": "Kael | Expulso",
+      "description": "{{- executor}} expulsou {{- kicked}}",
+      "user": ["Usuário", "{{- tag}}"],
+      "id": ["ID", "{{id}}"],
+      "reason": ["Motivo", "{{- reason}}"]
+    }
+  },
+  "banimage": {
+    "name": "banimage",
+    "description": "Defina um gif ou imagem para ter um banimento personalizado.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, Informe uma url",
+      "invalidUrl": "$t(constants:errorPrefix) {{- user}}, Informe uma url válida",
+      "invalidExtension": "$t(constants:errorPrefix) {{- user}}, Informe apenas imagens de url tipo `PNG/GIF/JPG`"
+    },
+    "imageAdded": "$t(emojis:KaelVerificacaoAnimado) **|** {{- user}}, Você adicionou uma ilustração ao seu banimento personalizado."
+  },
+  "clear": {
+    "name": "apagar",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, Informe o argumento obrigatório: `<idMessage>/<@idMember>/<quantia>`",
+      "invalidId": "$t(emojis:Limpeza) **|** {{- user}}, O id da mensagem informado é inválido",
+      "NaN": "$t(emojis:Limpeza) **|** {{- user}}, A quantia definida não é um número inteiro, tente algo entre 2 e 2000.",
+      "sizeLimit": "$t(emojis:Limpeza) **|** {{- user}}, Eu só posso limpar de {{min}} a {{max}} mensagens de uma vez!"
+    },
+    "description": "Apague um número específico de mensagens do canal ou de um determinado usuário.",
+    "bulkDelete": "$t(emojis:Limpeza) **|** {{- user}}, Eliminei {{count}} mensagens do sistema!",
+    "messageDeleted": "$t(emojis:Limpeza) **|** {{- user}}, A mensagem de id **{{id}}** foi eliminada com sucesso!",
+    "userBulkDelete": "$t(emojis:Kaeltec) **|** {{- user}}, As mensagens de **{{- tag}}** foram apagadas com sucesso!"
+  },
+  "security": {
+    "name": "defesa",
+    "description": "Para receber meus comandos de defesa.",
+    "embed": {
+      "title": "Kael | Defesa",
+      "learnMore": [
+        "Olá, você quer saber como funciona meu sistema de defesa?",
+        "É bem simples! Especifique quais de minhas defesas você quer funcionando através de um: **parâmetro**"
+      ],
+      "capslock": ["{{- prefix}}defesa capslock", "Apaga mensagens que contêm X% de CAIXA ALTA (Capslock)"],
+      "apng": ["{{- prefix}}defesa apng", "Bane usuários que utilizam apng (Avatar animado sem nitro) de perfil."],
+      "invite": ["{{- prefix}}defesa invite", "Bloqueador de convites de outros servidores."],
+      "spam": ["{{- prefix}}defesa spam", "Bloqueador de mensagens repetidas em massa (Spam)"],
+      "bots": ["{{- prefix}}defesa bots", "Bloqueador de bots no servidor"]
+    },
+    "subcommands": {
+      "capslock": {
+        "errors": {
+          "NaN": "$t(constants:errorPrefix) {{- user}}, Defina um número do segundo argumento do tipo inteiro.",
+          "range": "$t(constants:errorPrefix) {{- user}}, Defina um número como argumento entre 0% e 100% ."
+        },
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra capslock ativada com **{{percentage}}%** de caps. $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, Defesa conta capslock desativada. $t(emojis:CancelarK)"
+      },
+      "apng": {
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra imagens APNG agora está: **Ativada** $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra imagens APNG agora está: **Desativada** $t(emojis:CancelarK)"
+      },
+      "invite": {
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra convites agora está: **Ativada** $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra convites agora está: **Desativada** $t(emojis:CancelarK)"
+      },
+      "spam": {
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra SPAM agora está: **Ativada** $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra SPAM agora está: **Desativada** $t(emojis:CancelarK)"
+      },
+      "bots": {
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra bots agora está: **Ativada** $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, Defesa contra bots agora está: **Desativada** $t(emojis:CancelarK)"
+      }
+    }
+  }
+}

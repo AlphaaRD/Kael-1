@@ -1,0 +1,339 @@
+{
+  "help": {
+    "name": "help",
+    "embed": {
+      "title": "Help | Kael",
+      "admin": ["{{- prefix}}help admin", "Get my admin commands."],
+      "staff": ["{{- prefix}}help staff", "Get my staff commands."],
+      "util": ["{{- prefix}}help util", "Get my utils commands."]
+    },
+    "subCommands": {
+      "admin": {
+        "embed": {
+          "title": "Help | Admin"
+        },
+        "sent": "$t(emojis:Admin) | Admin commands sent to your DM!"
+      },
+      "staff": {
+        "embed": {
+          "title": "Help | Staff"
+        },
+        "sent": "$t(emojis:Mod) | Staff commands sent to your DM!"
+      },
+      "util": {
+        "embed": {
+          "title": "Help | Utility"
+        },
+        "sent": "$t(emojis:util) | Utility commands sent to your DM!"
+      }
+    },
+    "errors": {
+      "dmBlocked": "$t(constants:errorPrefix) {{- user}}, Your DM is blocked."
+    }
+  },
+  "avatar": {
+    "name": "avatar",
+    "description": "Get user avatar.",
+    "embed": {
+      "description": "$t(emojis:Avatar) **|** {{- user}} avatar"
+    }
+  },
+  "ping": {
+    "name": "ping",
+    "description": "Shows bot ping."
+  },
+  "autorole": {
+    "name": "autorole",
+    "arguments": "<@role>",
+    "description": "Set autoroles.",
+    "embed": {
+      "title": "Help | Autorole",
+      "description": ["{{- prefix}}autorole", "Set autoroles for new members. Max roles: **5**"],
+      "remove": ["{{- prefix}}autorole remove", "Remove roles from autorole."]
+    },
+    "errors": {
+      "invalidRoles": "$t(constants:errorPrefix) {{- user}}, Invalid roles, silly!",
+      "rolesAlreadyAdded": "$t(constants:errorPrefix) {{- user}}, These roles have already been added!!",
+      "reachedLimit": "$t(constants:errorPrefix) {{- user}}, You reached the limit of 5 added roles!!",
+      "setLimit": "$t(constants:errorPrefix) {{- user}}, You can only add 5 roles at a time, silly!",
+      "removeLimit": "$t(constants:errorPrefix) {{- user}}, You can only remove 5 roles at a time, silly!"
+    },
+    "add": "$t(emojis:autorole) **|** Adding role {{- roles}} to autorole list.",
+    "add_plural": "$t(emojis:autorole) **|** Adding roles {{- roles}} to autorole list.",
+    "remove": "$t(emojis:autorole) **|** Removing role {{- roles}} from autorole list.",
+    "remove_plural": "$t(emojis:autorole) **|** Removing roles {{- roles}} from autorole list."
+  },
+  "message": {
+    "name": "message",
+    "description": "Welcome messages panel.",
+    "embed": {
+      "title": "Help | Message",
+      "description": "Use the commands below to set up the welcome message!",
+      "join": [
+        "{{- prefix}}message welcome",
+        "Set a welcome message."
+      ],
+      "dm": [
+        "{{- prefix}}message dm",
+        "Set a DM welcome message."
+      ],
+      "leave": [
+        "{{- prefix}}message goodbye",
+        "Set a goodbye message.\n\n**Parameters:**"
+      ],
+      "userCreatedAt": [
+        "[user.created]",
+        "Date when user was created."
+      ],
+      "member": [
+        "[member]",
+        "Mention the member."
+      ],
+      "guildName": [
+        "[guild.name]",
+        "Mention the server name."
+      ],
+      "guildId": [
+        "[guild.id]",
+        "Mention the server id."
+      ],
+      "memberUsername": [
+        "[member.username]",
+        "Mention the member username."
+      ],
+      "memberAvatar": [
+        "[member.avatar]",
+        "Member's avatar URL."
+      ],
+      "memberId": [
+        "[member.id]",
+        "Members' id."
+      ],
+      "deactivatedModule": [
+        "{{- prefix}}message disable welcome/dm/goodbye",
+        "Deactivate message modules."
+      ],
+      "testModule": [
+        "{{- prefix}}message test welcome/dm/goodbye",
+        "Test a message module."
+      ]
+    },
+    "subCommands": {
+      "dm": {
+        "errors": {
+          "noArgs": "$t(constants:errorPrefix) {{- user}}, Replace `<message>` with the new dm message: `{{- prefix}}message dm <message>`.",
+          "lengthLimit": "$t(constants:errorPrefix) {{- user}}, Your message is too long!! The limit is {{max}} chars."
+        },
+        "setMessage": "$t(emojis:MensagemK) **|** {{- user}}, New DM welcome message: `{{- message}}`"
+      },
+      "welcome": {
+        "errors": {
+          "lengthLimit": "$t(constants:errorPrefix) {{- user}}, Your message is too long!! The limit is {{max}} chars!!"
+        },
+        "setChannel": "$t(emojis:MensagemK) **|** {{- user}}, Welcome messages will be sent on {{- channel}}.",
+        "setMessage": "$t(emojis:MensagemK) **|** {{- user}}, New welcome message: `{{- message}}`"
+      },
+      "goodbye": {
+        "errors": {
+          "lengthLimit": "$t(constants:errorPrefix) {{- user}}, Your message is too long!! The limit is {{max}} chars!!"
+        },
+        "setChannel": "$t(emojis:MensagemK) **|** {{- user}}, Goodbye messages will be sent on {{- channel}}.",
+        "setMessage": "$t(emojis:MensagemK) **|** {{- user}}, New goodbye message: `{{- message}}`"
+      },
+      "test": {
+        "errors": {
+          "dmNotActive": "$t(constants:errorPrefix) {{- user}}, DM messages aren't active!",
+          "welcomeNotActive": "$t(constants:errorPrefix) {{- user}}, Welcome messages aren't active!",
+          "goodbyeNotActive": "$t(constants:errorPrefix) {{- user}}, Goodbye messages aren't active!"
+        }
+      },
+      "deactivate": {
+        "errors": {
+          "dmAlreadyDeactivated": "$t(constants:errorPrefix) {{- user}}, DM message already deactivated!",
+          "welcomeAlreadyDeactivated": "$t(constants:errorPrefix) {{- user}}, Welcome message already deactivated!",
+          "goodbyeAlreadyDeactivated": "$t(constants:errorPrefix) {{- user}}, Goodbye message already deactivated!"
+        },
+        "welcome": "$t(emojis:MensagemK) **|** {{- user}}, Welcome messages deactivated.",
+        "goodbye": "$t(emojis:MensagemK) **|** {{- user}}, Goodbye messages deactivated.",
+        "dm": "$t(emojis:MensagemK)**|** {{- user}}, DM messages deactivated."
+      }
+    }
+  },
+  "prefix": {
+    "name": "prefix",
+    "description": "Change the bot's prefix on your server.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) Set a new prefix! **{{- prefix}}prefix <new-prefix>**",
+      "lengthLimit": "$t(constants:errorPrefix) {{- user}}, Your prefix is too long!! The limit is {{MAX}} chars."
+    },
+    "changed": "$t(emojis:KaelMutado) **|** {{- user}}, My new prefix is: **{{- prefix}}**"
+  },
+  "icon": {
+    "name": "icon",
+    "description": "Get server icon.",
+    "embed": {
+      "title": "$t(emojis:Avatar) **|** Server icon",
+      "errorTitle": "$t(emojis:Avatar) **|** Server without icon"
+    }
+  },
+  "recruiter": {
+    "name": "recruiter",
+    "description": "Get how many members someone recruited.",
+    "embed": {
+      "title": "Kael | Recruiter",
+      "recruiterInfo": ["Recruiter {{- tag}}", "Invited **{{count}}** member(s)."],
+      "invites": "Invites:"
+    },
+    "errors": {
+      "noInvites": "**{{- tag}}** This server has no invites."
+    },
+    "inviteInfo": "{{- count}} member(s)"
+  },
+  "recruiters": {
+    "name": "recruiters",
+    "description": "Recruiters top ranking.",
+    "embed": {
+      "title": "Recruiters | {{- guildName}}",
+      "description": "This is the ranking of the best recruiters on this server!",
+      "position_1": "$t(emojis:lugar1) **1º**",
+      "position_2": "$t(emojis:lugar2) **2º**",
+      "position_3": "$t(emojis:lugar3) **3º**",
+      "position_4": "$t(emojis:lugar4) **4º**",
+      "position_5": "$t(emojis:lugar5) **5º**",
+      "inviter": "{{- position}} {{- username}}\n```\nRecruited: {{uses}}\n```",
+      "totalRecruited": ["Total recruited", "$t(emojis:Servidor) ~ {{totalRecruited}}"],
+      "totalInvites": ["Total invites", "$t(emojis:Convite) ~ {{totalInvites}}"]
+    }
+  },
+  "roleall": {
+    "name": "roleall",
+    "description": "Add up to 5 roles to each member.",
+    "errors": {
+      "noRoles": "$t(constants:errorPrefix) {{- user}}, `<@roleId>` is invalid.",
+      "rolesLimit": "$t(constants:errorPrefix) {{- user}}, You can only add up to 5 roles at a time."
+    },
+    "embed": {
+      "title": "Add {{roles}} role(s) to {{members}} members?",
+      "roles": ["$t(emojis:KaelVerificacaoAnimado) Role(s)", "{{- roles}}"],
+      "estimatedTime": "Estimate time: {{count}} second(s)"
+    },
+    "cancelled": "$t(emojis:Kaeltec) **|** {{- user}}, roleall cancelled.",
+    "addingRoles": "$t(emojis:Kaeltec) **|** {{- user}}, Adding roles... await!",
+    "done": "$t(emojis:Kaeltec) **|** {{- user}}, All members received the specified roles!"
+  },
+  "lang": {
+    "name": "lang",
+    "description": "Change the language.",
+    "embed": {
+      "title": "Choose a language!",
+      "available": "Available languages:"
+    },
+    "languageChanged": "$t(emojis:ConfirmarK) {{- user}}, Language changed to **English** 🇺🇸"
+  },
+  "say": {
+    "name": "say",
+    "description": "Say something and I'll repeat it.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, Specify what you want me to say!"
+    }
+  },
+  "ban": {
+    "name": "ban",
+    "description": "Ban an user.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, **| `<@mention/id>` is required.**",
+      "userNotFound": "$t(constants:errorPrefix) {{- user}}, **| User not found.**",
+      "userMissingPerm": "$t(constants:errorPrefix) {{- user}}, You don't have enough permission to ban this user.",
+      "botMissingPerm": "$t(constants:errorPrefix) {{- user}}, I don't have enough permission to ban this user."
+    },
+    "embed": {
+      "title": "Kael | Banned",
+      "description": "{{- executor}} banned {{- banned}}!",
+      "user": ["User", "{{- tag}}"],
+      "id": ["ID", "{{id}}"],
+      "reason": ["Reason", "{{- reason}}"],
+      "footer": "You need to learn good manners 🏫"
+    }
+  },
+  "kick": {
+    "name": "kick",
+    "description": "Kick a member.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, `<@mention/id>` is required.",
+      "userMissingPerm": "$t(constants:errorPrefix) {{- user}}, You don't have enough permission to kick this user.",
+      "botMissingPerm": "$t(constants:errorPrefix) {{- user}}, I don't have enough permission to kick this user."
+    },
+    "embed": {
+      "title": "Kael | Kicked",
+      "description": "{{- executor}} kicked {{- kicked}}",
+      "user": ["User", "{{- tag}}"],
+      "id": ["ID", "{{id}}"],
+      "reason": ["Reason", "{{- reason}}"]
+    }
+  },
+  "banimage": {
+    "name": "banimage",
+    "description": "Set a custom ban image or gif.",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, Enter an url",
+      "invalidUrl": "$t(constants:errorPrefix) {{- user}}, Enter a valid url",
+      "invalidExtension": "$t(constants:errorPrefix) {{- user}}, Only `PNG/GIF/JPG` are allowed!"
+    },
+    "imageAdded": "$t(emojis:KaelVerificacaoAnimado) **|** {{- user}}, You added a custom ban image."
+  },
+  "clear": {
+    "name": "clear",
+    "errors": {
+      "noArgs": "$t(constants:errorPrefix) {{- user}}, `<idMessage>/<@idMember>/<quantity>` is required",
+      "invalidId": "$t(emojis:Limpeza) **|** {{- user}}, Invalid message ID",
+      "NaN": "$t(emojis:Limpeza) **|** {{- user}}, That's not a number! Try something between 2 and 2000.",
+      "sizeLimit": "$t(emojis:Limpeza) **|** {{- user}}, I can only clear {{min}} to {{max}} messages at a time!"
+    },
+    "description": "Clear a number of channel or user messages.",
+    "bulkDelete": "$t(emojis:Limpeza) **|** {{- user}}, Removed {{count}} messages!",
+    "messageDeleted": "$t(emojis:Limpeza) **|** {{- user}}, The message (**ID: {{id}}**) was deleted succesfully!",
+    "userBulkDelete": "$t(emojis:Kaeltec) **|** {{- user}}, **{{- tag}}** messages were deleted successfully!"
+  },
+  "security": {
+    "name": "security",
+    "description": "Security panel.",
+    "embed": {
+      "title": "Kael | Security",
+      "learnMore": [
+        "Hello, do you wanna know how my security system works?",
+        "It's quite simple! Specify which of my defenses you want active through a **parameter**"
+      ],
+      "capslock": ["{{- prefix}}security capslock", "Deletes messages with X% capslock"],
+      "apng": ["{{- prefix}}security apng", "Bans users with .apng avatars."],
+      "invite": ["{{- prefix}}security invite", "Blocks invites on your server."],
+      "spam": ["{{- prefix}}security spam", "Spam defense"],
+      "bots": ["{{- prefix}}security bots", "Bot blocking, kicks upon joining"]
+    },
+    "subcommands": {
+      "capslock": {
+        "errors": {
+          "NaN": "$t(constants:errorPrefix) {{- user}}, Enter a whole number.",
+          "range": "$t(constants:errorPrefix) {{- user}}, enter a whole number between 0% and 100%."
+        },
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, Capslock blocking activated! **{{percentage}}%** caps. $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, Capslock blocking deactivated!. $t(emojis:CancelarK)"
+      },
+      "apng": {
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, APNG blocking activated! $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, APNG blocking deactivated! $t(emojis:CancelarK)"
+      },
+      "invite": {
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, Invite blocking activated! $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, Invite blocking deactivated! $t(emojis:CancelarK)"
+      },
+      "spam": {
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, SPAM blocking activated! $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, SPAM blocking deactivated! $t(emojis:CancelarK)"
+      },
+      "bots": {
+        "activated": "$t(emojis:Defesa) **|** {{- user}}, Bot blocking activated! $t(emojis:ConfirmarK)",
+        "deactivated": "$t(emojis:Defesa) **|** {{- user}}, Bot blocking deactivated! $t(emojis:CancelarK)"
+      }
+    }
+  }
+}
